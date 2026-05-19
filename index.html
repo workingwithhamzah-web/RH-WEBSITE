@@ -1,0 +1,473 @@
+<html class="dark" lang="en">
+
+<head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <title>RH WIP WEBSITE</title>
+        <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+        <link href="https://fonts.googleapis.com" rel="preconnect" />
+        <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+                rel="stylesheet" />
+        <script id="tailwind-config">
+                tailwind.config = {
+                        darkMode: "class",
+                        theme: {
+                                extend: {
+                                        "colors": {
+                                                "surface-variant": "#353535",
+                                                "inverse-surface": "#e2e2e2",
+                                                "primary-fixed-dim": "#e9c349",
+                                                "secondary-fixed": "#e3e2e0",
+                                                "error": "#ffb4ab",
+                                                "surface": "#131313",
+                                                "surface-container-high": "#2a2a2a",
+                                                "on-secondary": "#303130",
+                                                "secondary-fixed-dim": "#c7c6c4",
+                                                "background": "#131313",
+                                                "outline": "#99907c",
+                                                "outline-variant": "#4d4635",
+                                                "on-tertiary-container": "#254188",
+                                                "on-primary": "#3c2f00",
+                                                "inverse-primary": "#735c00",
+                                                "on-secondary-fixed-variant": "#464746",
+                                                "on-surface-variant": "#d0c5af",
+                                                "surface-container-low": "#1b1b1b",
+                                                "on-primary-fixed-variant": "#574500",
+                                                "on-secondary-fixed": "#1b1c1b",
+                                                "surface-container-lowest": "#0e0e0e",
+                                                "surface-tint": "#e9c349",
+                                                "on-primary-container": "#554300",
+                                                "on-error-container": "#ffdad6",
+                                                "surface-container": "#1f1f1f",
+                                                "secondary": "#c7c6c4",
+                                                "primary-container": "#d4af37",
+                                                "on-tertiary": "#082b72",
+                                                "surface-bright": "#393939",
+                                                "on-secondary-container": "#b5b5b3",
+                                                "tertiary-fixed-dim": "#b4c5ff",
+                                                "on-tertiary-fixed-variant": "#27438a",
+                                                "on-tertiary-fixed": "#00174b",
+                                                "primary": "#f2ca50",
+                                                "primary-fixed": "#ffe088",
+                                                "tertiary": "#bfcdff",
+                                                "surface-container-highest": "#353535",
+                                                "on-background": "#e2e2e2",
+                                                "on-primary-fixed": "#241a00",
+                                                "inverse-on-surface": "#303030",
+                                                "tertiary-container": "#97b0ff",
+                                                "tertiary-fixed": "#dbe1ff",
+                                                "surface-dim": "#131313",
+                                                "secondary-container": "#464746",
+                                                "on-surface": "#e2e2e2",
+                                                "on-error": "#690005",
+                                                "error-container": "#93000a",
+                                                "cream": "#F5F5DC"
+                                        },
+                                        "borderRadius": {
+                                                "DEFAULT": "0.25rem",
+                                                "lg": "0.5rem",
+                                                "xl": "0.75rem",
+                                                "full": "9999px"
+                                        },
+                                        "spacing": {
+                                                "unit": "8px",
+                                                "container-max": "1440px",
+                                                "section-gap": "120px",
+                                                "gutter": "24px",
+                                                "margin-desktop": "80px",
+                                                "margin-mobile": "24px"
+                                        },
+                                        "fontFamily": {
+                                                "display-lg": [
+                                                        "DIN", "sans-serif"
+                                                ],
+                                                "label-caps": [
+                                                        "DIN", "sans-serif"
+                                                ],
+                                                "headline-md": [
+                                                        "DIN", "sans-serif"
+                                                ],
+                                                "body-md": [
+                                                        "DIN", "sans-serif"
+                                                ],
+                                                "body-lg": [
+                                                        "DIN", "sans-serif"
+                                                ],
+                                                "headline-sm": [
+                                                        "DIN", "sans-serif"
+                                                ],
+                                                "display-lg-mobile": [
+                                                        "DIN", "sans-serif"
+                                                ]
+                                        },
+                                        "fontSize": {
+                                                "display-lg": [
+                                                        "64px",
+                                                        {
+                                                                "lineHeight": "1.1",
+                                                                "letterSpacing": "-0.02em",
+                                                                "fontWeight": "700"
+                                                        }
+                                                ],
+                                                "label-caps": [
+                                                        "12px",
+                                                        {
+                                                                "lineHeight": "1.0",
+                                                                "letterSpacing": "0.2em",
+                                                                "fontWeight": "600"
+                                                        }
+                                                ],
+                                                "headline-md": [
+                                                        "32px",
+                                                        {
+                                                                "lineHeight": "1.3",
+                                                                "letterSpacing": "0em",
+                                                                "fontWeight": "600"
+                                                        }
+                                                ],
+                                                "body-md": [
+                                                        "16px",
+                                                        {
+                                                                "lineHeight": "1.6",
+                                                                "letterSpacing": "0.01em",
+                                                                "fontWeight": "400"
+                                                        }
+                                                ],
+                                                "body-lg": [
+                                                        "18px",
+                                                        {
+                                                                "lineHeight": "1.6",
+                                                                "letterSpacing": "0.01em",
+                                                                "fontWeight": "400"
+                                                        }
+                                                ],
+                                                "headline-sm": [
+                                                        "24px",
+                                                        {
+                                                                "lineHeight": "1.4",
+                                                                "letterSpacing": "0.02em",
+                                                                "fontWeight": "600"
+                                                        }
+                                                ],
+                                                "display-lg-mobile": [
+                                                        "40px",
+                                                        {
+                                                                "lineHeight": "1.2",
+                                                                "letterSpacing": "-0.01em",
+                                                                "fontWeight": "700"
+                                                        }
+                                                ]
+                                        }
+                                },
+                        },
+                }
+        </script>
+        <style>
+                body {
+                        background-color: #000000;
+                }
+
+                .material-symbols-outlined {
+                        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+                }
+
+                .text-outline-glow {
+                        text-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+                }
+
+                @keyframes shine-sweep {
+                        0% { transform: translateX(0) skewX(-20deg); }
+                        100% { transform: translateX(300%) skewX(-20deg); }
+                }
+
+                .logo-shine-wrapper {
+                        -webkit-mask-image: url('assets/logo.png');
+                        -webkit-mask-size: 100% 100%;
+                        mask-image: url('assets/logo.png');
+                        mask-size: 100% 100%;
+                }
+
+                .logo-shine-wrapper::after {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: -150%;
+                        width: 100%;
+                        height: 100%;
+                        background: linear-gradient(to right, transparent, rgba(242, 202, 80, 0.3) 30%, rgba(255, 235, 140, 0.9) 50%, rgba(242, 202, 80, 0.3) 70%, transparent);
+                        animation: shine-sweep 2s cubic-bezier(0.4, 0, 0.2, 1) 0.5s forwards;
+                }
+        </style>
+</head>
+
+<body
+        class="bg-black text-cream antialiased overflow-x-hidden selection:bg-primary-container selection:text-on-primary-container">
+        <!-- Navigation Bar -->
+        <nav class="fixed top-0 w-full z-[100] flex items-center justify-between px-6 md:px-12 py-4 bg-black/40 backdrop-blur-lg border-b border-white/5 transition-all duration-300">
+                <div class="flex items-center">
+                        <a href="#" class="block flex items-center justify-center">
+                                <img src="assets/icon.png" alt="RH Icon" class="h-10 md:h-14 w-auto object-contain" />
+                        </a>
+                </div>
+                <div class="flex items-center gap-6 md:gap-10">
+                        <a href="#brand-story" class="font-label-caps text-label-caps text-cream hover:text-white transition-colors duration-300 tracking-widest text-xs md:text-sm">BRAND STORY</a>
+                        <a href="#reach-us" class="font-label-caps text-label-caps text-cream hover:text-white transition-colors duration-300 tracking-widest text-xs md:text-sm">REACH US</a>
+                </div>
+        </nav>
+        <!-- Scroll Animation Section -->
+        <div id="loading"
+                class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-cream font-body-lg z-50 transition-opacity duration-500">
+                Loading frames... 0%</div>
+        <div id="scroll-container" class="relative w-full" style="height: 500vh;">
+                <div class="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden bg-black">
+                        <canvas id="animation-canvas" class="w-full h-full object-cover"></canvas>
+                        <div id="hero-logo" class="absolute z-10 w-44 md:w-64 lg:w-[350px] logo-shine-wrapper overflow-hidden" style="opacity: 1;">
+                                <img src="assets/logo.png" alt="Rare Heritage" class="w-full h-auto block" />
+                        </div>
+                </div>
+        </div>
+        <!-- Brand Story Section -->
+        <section id="brand-story"
+                class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto text-center flex flex-col items-center scroll-reveal opacity-0 translate-y-12 transition-all duration-1000 ease-out">
+                <div class="w-[1px] h-[80px] bg-outline-variant/30 mb-12"></div>
+                <h2 class="font-headline-md text-headline-md text-cream mb-8">Brand Story</h2>
+                <p class="font-body-lg text-body-lg text-cream max-w-2xl mx-auto leading-relaxed">
+                        Every piece conceived within the walls of Aurelian is a testament to uncompromising dedication.
+                        We blend centuries-old Parisian craftsmanship with severe, modern aesthetics to forge jewelry
+                        that transcends adornment. Our artisans labor in quiet devotion, honoring the silence of the
+                        stone and the strength of the metal, creating not just accessories, but timeless artifacts of
+                        personal power.
+                </p>
+                <div class="w-[1px] h-[80px] bg-outline-variant/30 mt-12"></div>
+        </section>
+        <!-- Collection Gallery Section -->
+        <section class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+                        <!-- Large Focus Piece -->
+                        <div class="md:col-span-8 group relative overflow-hidden bg-surface-container-lowest">
+                                <div class="aspect-square w-full">
+                                        <img alt="Lady in black dress."
+                                                class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105 opacity-90 group-hover:opacity-100"
+                                                src="assets/image3.jpg" />
+                                </div>
+                        </div>
+                        <!-- Side Pieces -->
+                        <div class="md:col-span-4 flex flex-col gap-gutter">
+                                <div class="group relative overflow-hidden bg-surface-container-lowest flex-1 aspect-square md:aspect-auto">
+                                        <img alt="Close up with pink jewels."
+                                                class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105 opacity-90 group-hover:opacity-100"
+                                                src="assets/image1.jpg" />
+                                </div>
+                                <div class="group relative overflow-hidden bg-surface-container-lowest flex-1 aspect-square md:aspect-auto">
+                                        <img alt="Group in red."
+                                                class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105 opacity-90 group-hover:opacity-100"
+                                                src="assets/image2.jpg" />
+                                </div>
+                        </div>
+                </div>
+        </section>
+        <!-- Second Scroll Animation Section -->
+        <div id="scroll-container-2" class="relative w-full" style="height: 300vh;">
+                <div class="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden bg-black">
+                        <canvas id="animation-canvas-2" class="w-full h-full object-cover"></canvas>
+                </div>
+        </div>
+        <!-- Contact & Location Section -->
+        <section id="reach-us"
+                class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto border-t border-outline-variant/10 text-center">
+                <h2 class="font-headline-md text-headline-md text-cream mb-16">Reach Us</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-0 items-center">
+                        <div class="flex flex-col gap-4 px-8">
+                                <p
+                                        class="font-label-caps text-label-caps text-cream uppercase tracking-widest text-sm font-bold">
+                                        ADDRESS</p>
+                                <p
+                                        class="font-body-md text-body-md text-cream/70 max-w-[280px] mx-auto leading-relaxed">
+                                        Hetal Arch Society, A-Wing, 201,<br />
+                                        S.V Rd, Malad West, Mumbai 400 064
+                                </p>
+                        </div>
+                        <div class="flex flex-col gap-4 relative px-8">
+                                <div
+                                        class="hidden md:block absolute left-0 top-1/2 -translate-y-1/2 w-[1px] h-24 bg-white/10">
+                                </div>
+                                <div
+                                        class="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 w-[1px] h-24 bg-white/10">
+                                </div>
+                                <p
+                                        class="font-label-caps text-label-caps text-cream uppercase tracking-widest text-sm font-bold">
+                                        CONTACT US</p>
+                                <p class="font-body-md text-body-md text-cream/70 leading-relaxed">
+                                        022 4003 2987<br />
+                                        022 4003 2987
+                                </p>
+                        </div>
+                        <div class="flex flex-col gap-4 px-8">
+                                <p
+                                        class="font-label-caps text-label-caps text-cream uppercase tracking-widest text-sm font-bold">
+                                        STORE HOURS</p>
+                                <p class="font-body-md text-body-md text-cream/70 leading-relaxed">
+                                        Mon to Wed: 11:30 am to 8:00pm<br />
+                                        Fri to Sun: 11:30 am to 8:00pm
+                                </p>
+                        </div>
+                </div>
+
+                <!-- Map Embed -->
+                <a href="https://maps.app.goo.gl/uZu5bRGq2baWjNY79" target="_blank" rel="noopener noreferrer"
+                        class="block w-full mt-24 relative group overflow-hidden rounded-sm bg-surface-container-lowest hover:scale-[1.03] transition-transform duration-700 z-10">
+                        <iframe width="100%" height="450" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+                                src="https://maps.google.com/maps?q=Hetal%20Arch%20Society,%20Malad%20West,%20Mumbai&t=&z=14&ie=UTF8&iwloc=&output=embed"
+                                class="w-full h-[450px] pointer-events-none filter grayscale opacity-70 group-hover:opacity-100 transition-opacity duration-700"></iframe>
+                        <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-700"></div>
+                </a>
+        </section>
+        <!-- Footer -->
+        <footer
+                class="w-full px-margin-desktop py-24 md:py-32 flex flex-col items-center justify-center bg-black border-t border-outline-variant/10">
+                <div class="font-serif text-cream text-5xl md:text-7xl lg:text-[140px] tracking-widest mb-8 md:mb-12 text-center w-full flex items-start justify-center uppercase scroll-reveal opacity-0 translate-y-12 transition-all duration-1000 ease-out hover:scale-105 cursor-default" style="font-family: 'Times New Roman', Times, serif;">
+                        RARE HERITAGE<sup class="text-xl md:text-3xl lg:text-5xl mt-2 md:mt-6 -ml-2 lg:-ml-6">™</sup>
+                </div>
+                <p class="font-sans text-cream/70 text-[10px] md:text-xs tracking-[0.2em] uppercase text-center">
+                        © 2024 RARE HERITAGE. ALL RIGHTS RESERVED.
+                </p>
+        </footer>
+
+        <script>
+                function initScrollAnimation(containerId, canvasId, frameCount, framePathGenerator, onScrollCallback = null) {
+                        const container = document.getElementById(containerId);
+                        const canvas = document.getElementById(canvasId);
+                        if (!container || !canvas) return;
+
+                        const context = canvas.getContext('2d');
+                        const images = [];
+                        let loadedImages = 0;
+
+                        // Preload images
+                        for (let i = 0; i < frameCount; i++) {
+                                const img = new Image();
+                                img.onload = () => {
+                                        loadedImages++;
+                                        if (loadedImages === frameCount) {
+                                                renderFrame(0);
+                                                if (containerId === 'scroll-container') {
+                                                        const loadingElement = document.getElementById('loading');
+                                                        if (loadingElement) {
+                                                                loadingElement.style.opacity = '0';
+                                                                setTimeout(() => loadingElement.style.display = 'none', 500);
+                                                        }
+                                                }
+                                        } else if (containerId === 'scroll-container') {
+                                                const loadingElement = document.getElementById('loading');
+                                                if (loadingElement) loadingElement.innerText = `Loading frames... ${Math.round((loadedImages / frameCount) * 100)}%`;
+                                        }
+                                };
+                                img.src = framePathGenerator(i);
+                                images.push(img);
+                        }
+
+                        if (images.length > 0) {
+                                images[0].addEventListener('load', () => {
+                                        canvas.width = images[0].naturalWidth;
+                                        canvas.height = images[0].naturalHeight;
+                                });
+                        }
+
+                        function renderFrame(index) {
+                                if (images[index] && images[index].complete) {
+                                        context.clearRect(0, 0, canvas.width, canvas.height);
+                                        context.drawImage(images[index], 0, 0);
+                                }
+                        }
+
+                        // Bind the scroll event to update frames
+                        window.addEventListener('scroll', () => {
+                                const containerRect = container.getBoundingClientRect();
+                                let scrollFraction = 0;
+
+                                if (containerRect.top <= 0) {
+                                        const maxScroll = containerRect.height - window.innerHeight;
+                                        scrollFraction = -containerRect.top / maxScroll;
+                                }
+
+                                scrollFraction = Math.max(0, Math.min(1, scrollFraction));
+
+                                if (onScrollCallback) {
+                                        onScrollCallback(scrollFraction);
+                                }
+
+                                const frameIndex = Math.min(
+                                        frameCount - 1,
+                                        Math.ceil(scrollFraction * frameCount)
+                                );
+
+                                requestAnimationFrame(() => renderFrame(frameIndex));
+                        });
+                }
+
+                // Initialize Hero Animation
+                initScrollAnimation(
+                        'scroll-container',
+                        'animation-canvas',
+                        231,
+                        (index) => `frames/ezgif-frame-${(index + 1).toString().padStart(3, '0')}.jpg`,
+                        (fraction) => {
+                                const heroLogo = document.getElementById('hero-logo');
+                                if (heroLogo) {
+                                        let logoOpacity = 1 - (fraction / 0.3);
+                                        heroLogo.style.opacity = Math.max(0, Math.min(1, logoOpacity));
+                                }
+                        }
+                );
+
+                // Initialize Second Animation
+                initScrollAnimation(
+                        'scroll-container-2',
+                        'animation-canvas-2',
+                        151,
+                        (index) => `frames2/ezgif-frame-${(index + 1).toString().padStart(3, '0')}.jpg`
+                );
+
+                // Smooth scroll for nav links
+                document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+                        anchor.addEventListener('click', function (e) {
+                                const targetId = this.getAttribute('href');
+                                if (targetId === '#') return;
+                                const targetElement = document.querySelector(targetId);
+                                if (targetElement) {
+                                        e.preventDefault();
+                                        const navHeight = 96;
+                                        const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navHeight;
+                                        window.scrollTo({
+                                                top: targetPosition,
+                                                behavior: 'smooth'
+                                        });
+                                }
+                        });
+                });
+
+                // Intersection Observer for scroll animations
+                const observerOptions = {
+                        root: null,
+                        rootMargin: '0px',
+                        threshold: 0.15
+                };
+
+                const observer = new IntersectionObserver((entries, observer) => {
+                        entries.forEach(entry => {
+                                if (entry.isIntersecting) {
+                                        entry.target.classList.remove('opacity-0', 'translate-y-12');
+                                        entry.target.classList.add('opacity-100', 'translate-y-0');
+                                        observer.unobserve(entry.target);
+                                }
+                        });
+                }, observerOptions);
+
+                document.querySelectorAll('.scroll-reveal').forEach((el) => {
+                        observer.observe(el);
+                });
+        </script>
+</body>
+
+</html>
