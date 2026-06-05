@@ -197,6 +197,15 @@
                         height: 100%;
                         background: linear-gradient(to right, transparent, rgba(242, 202, 80, 0.3) 30%, rgba(255, 235, 140, 0.9) 50%, rgba(242, 202, 80, 0.3) 70%, transparent);
                         animation: shine-sweep 2s cubic-bezier(0.4, 0, 0.2, 1) 0.5s forwards;
+                /* Hide scrollbar for Chrome, Safari and Opera */
+                .hide-scrollbar::-webkit-scrollbar {
+                        display: none;
+                }
+
+                /* Hide scrollbar for IE, Edge and Firefox */
+                .hide-scrollbar {
+                        -ms-overflow-style: none;  /* IE and Edge */
+                        scrollbar-width: none;  /* Firefox */
                 }
         </style>
 </head>
@@ -218,16 +227,13 @@
                         </a>
                 </div>
         </nav>
-        <!-- Scroll Animation Section -->
-        <div id="loading"
-                class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-cream font-body-lg z-50 transition-opacity duration-500">
-                Loading frames... 0%</div>
-        <div id="scroll-container" class="relative w-full" style="height: 500vh;">
-                <div class="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden bg-black">
-                        <canvas id="animation-canvas" class="w-full h-full object-cover"></canvas>
-                        <div id="hero-logo" class="absolute z-10 w-44 md:w-64 lg:w-[350px] logo-shine-wrapper overflow-hidden" style="opacity: 1;">
-                                <img src="assets/logo.png" alt="Rare Heritage" class="w-full h-auto block" />
-                        </div>
+
+        <!-- Hero Video Section -->
+        <div id="hero-section" class="relative w-full h-[100vh] overflow-hidden bg-black flex items-center justify-center">
+                <video src="assets/RH_Teaser_01_v1.mp4" autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover opacity-80"></video>
+                <div class="absolute inset-0 bg-black/20"></div>
+                <div id="hero-logo" class="relative z-10 w-44 md:w-64 lg:w-[350px] logo-shine-wrapper overflow-hidden" style="opacity: 1;">
+                        <img src="assets/logo.png" alt="Rare Heritage" class="w-full h-auto block" />
                 </div>
         </div>
         <!-- Brand Story Section -->
@@ -249,32 +255,97 @@
                         <!-- Large Focus Piece -->
                         <div class="md:col-span-8 group relative overflow-hidden bg-surface-container-lowest">
                                 <div class="aspect-square w-full">
-                                        <img alt="Lady in black dress."
+                                        <img alt="Woman in orange shirt holding mask."
                                                 class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105 opacity-90 group-hover:opacity-100"
-                                                src="assets/image3.jpg" />
+                                                src="assets/gallery_orange_girl.jpg" />
                                 </div>
                         </div>
                         <!-- Side Pieces -->
                         <div class="md:col-span-4 flex flex-col gap-gutter">
                                 <div class="group relative overflow-hidden bg-surface-container-lowest flex-1 aspect-square md:aspect-auto">
-                                        <img alt="Close up with pink jewels."
+                                        <img alt="Woman in white with string instrument."
                                                 class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105 opacity-90 group-hover:opacity-100"
-                                                src="assets/image1.jpg" />
+                                                src="assets/gallery_sitar.jpg" />
                                 </div>
                                 <div class="group relative overflow-hidden bg-surface-container-lowest flex-1 aspect-square md:aspect-auto">
-                                        <img alt="Group in red."
+                                        <img alt="Man in gold shirt."
                                                 class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105 opacity-90 group-hover:opacity-100"
-                                                src="assets/image2.jpg" />
+                                                src="assets/gallery_man_gold.jpg" />
                                 </div>
                         </div>
                 </div>
         </section>
-        <!-- Second Scroll Animation Section -->
-        <div id="scroll-container-2" class="relative w-full" style="height: 300vh;">
-                <div class="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden bg-black">
-                        <canvas id="animation-canvas-2" class="w-full h-full object-cover"></canvas>
+        <!-- Moving Slider Section -->
+        <section class="relative w-full overflow-hidden bg-black group">
+                <!-- Constant Logo Overlay -->
+                <div class="pointer-events-none absolute bottom-10 left-1/2 -translate-x-1/2 w-48 md:w-72 z-20 transition-opacity duration-300 opacity-80 group-hover:opacity-100">
+                        <img src="assets/qala_logo.png" class="w-full h-auto drop-shadow-md" />
                 </div>
-        </div>
+                
+                <div id="full-width-slider" class="auto-slider flex w-full overflow-x-auto snap-x snap-mandatory hide-scrollbar scroll-smooth">
+                        <!-- Slide 1 -->
+                        <div class="relative w-screen h-[85vh] flex-shrink-0 snap-center overflow-hidden bg-black">
+                                <img src="assets/slider_1.jpg" class="w-full h-full object-contain opacity-90 transition-transform duration-1000 group-hover:scale-105 group-hover:opacity-100" />
+                        </div>
+                        <!-- Slide 2 -->
+                        <div class="relative w-screen h-[85vh] flex-shrink-0 snap-center overflow-hidden bg-black">
+                                <img src="assets/slider_2.jpg" class="w-full h-full object-contain opacity-90 transition-transform duration-1000 group-hover:scale-105 group-hover:opacity-100" />
+                        </div>
+                        <!-- Slide 3 -->
+                        <div class="relative w-screen h-[85vh] flex-shrink-0 snap-center overflow-hidden bg-black">
+                                <img src="assets/slider_3.jpg" class="w-full h-full object-contain opacity-90 transition-transform duration-1000 group-hover:scale-105 group-hover:opacity-100" />
+                        </div>
+                        <!-- Slide 4 -->
+                        <div class="relative w-screen h-[85vh] flex-shrink-0 snap-center overflow-hidden bg-black">
+                                <img src="assets/slider_4.jpg" class="w-full h-full object-contain opacity-90 transition-transform duration-1000 group-hover:scale-105 group-hover:opacity-100" />
+                        </div>
+                        <!-- Slide 5 -->
+                        <div class="relative w-screen h-[85vh] flex-shrink-0 snap-center overflow-hidden bg-black">
+                                <img src="assets/slider_5.jpg" class="w-full h-full object-contain opacity-90 transition-transform duration-1000 group-hover:scale-105 group-hover:opacity-100" />
+                        </div>
+                        <!-- Slide 1 Clone (For Seamless Looping) -->
+                        <div class="relative w-screen h-[85vh] flex-shrink-0 snap-center overflow-hidden bg-black">
+                                <img src="assets/slider_1.jpg" class="w-full h-full object-contain opacity-90 transition-transform duration-1000 group-hover:scale-105 group-hover:opacity-100" />
+                        </div>
+                </div>
+        </section>
+        
+        <!-- High Jewellery Slider Section -->
+        <section class="relative w-full overflow-hidden bg-black pt-16 md:pt-24 pb-8 border-t border-outline-variant/10 group">
+                <!-- Constant Text Overlay -->
+                <div class="pointer-events-none absolute bottom-12 md:bottom-16 left-1/2 -translate-x-1/2 w-full text-center z-20 transition-opacity duration-300 opacity-90 group-hover:opacity-100">
+                        <div class="font-serif text-white uppercase text-2xl md:text-4xl tracking-[0.3em] font-light" style="font-family: 'Times New Roman', Times, serif; text-shadow: 0px 4px 10px rgba(0,0,0,0.8);">HIGH JEWELLERY</div>
+                </div>
+                <!-- Gradient Overlay for readability -->
+                <div class="pointer-events-none absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-1000"></div>
+
+                <div class="auto-slider flex w-full overflow-x-auto snap-x snap-mandatory hide-scrollbar scroll-smooth">
+                        <!-- Slide 1 -->
+                        <div class="relative w-screen h-[85vh] flex-shrink-0 snap-center overflow-hidden bg-black">
+                                <img src="assets/jewellery_1.jpg" class="w-full h-full object-contain opacity-90 transition-transform duration-1000 group-hover:scale-105 group-hover:opacity-100" />
+                        </div>
+                        <!-- Slide 2 -->
+                        <div class="relative w-screen h-[85vh] flex-shrink-0 snap-center overflow-hidden bg-black">
+                                <img src="assets/jewellery_2.jpg" class="w-full h-full object-contain opacity-90 transition-transform duration-1000 group-hover:scale-105 group-hover:opacity-100" />
+                        </div>
+                        <!-- Slide 3 -->
+                        <div class="relative w-screen h-[85vh] flex-shrink-0 snap-center overflow-hidden bg-black">
+                                <img src="assets/jewellery_3.jpg" class="w-full h-full object-contain opacity-90 transition-transform duration-1000 group-hover:scale-105 group-hover:opacity-100" />
+                        </div>
+                        <!-- Slide 4 -->
+                        <div class="relative w-screen h-[85vh] flex-shrink-0 snap-center overflow-hidden bg-black">
+                                <img src="assets/jewellery_4.jpg" class="w-full h-full object-contain opacity-90 transition-transform duration-1000 group-hover:scale-105 group-hover:opacity-100" />
+                        </div>
+                        <!-- Slide 5 -->
+                        <div class="relative w-screen h-[85vh] flex-shrink-0 snap-center overflow-hidden bg-black">
+                                <img src="assets/jewellery_5.jpg" class="w-full h-full object-contain opacity-90 transition-transform duration-1000 group-hover:scale-105 group-hover:opacity-100" />
+                        </div>
+                        <!-- Slide 1 Clone (For Seamless Looping) -->
+                        <div class="relative w-screen h-[85vh] flex-shrink-0 snap-center overflow-hidden bg-black">
+                                <img src="assets/jewellery_1.jpg" class="w-full h-full object-contain opacity-90 transition-transform duration-1000 group-hover:scale-105 group-hover:opacity-100" />
+                        </div>
+                </div>
+        </section>
         <!-- Contact & Location Section -->
         <section id="reach-us"
                 class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto border-t border-outline-variant/10 text-center">
@@ -325,99 +396,41 @@
         </footer>
 
         <script>
-                function initScrollAnimation(containerId, canvasId, frameCount, framePathGenerator, onScrollCallback = null) {
-                        const container = document.getElementById(containerId);
-                        const canvas = document.getElementById(canvasId);
-                        if (!container || !canvas) return;
 
-                        const context = canvas.getContext('2d');
-                        const images = [];
-                        let loadedImages = 0;
-
-                        // Preload images
-                        for (let i = 0; i < frameCount; i++) {
-                                const img = new Image();
-                                img.onload = () => {
-                                        loadedImages++;
-                                        if (loadedImages === frameCount) {
-                                                renderFrame(0);
-                                                if (containerId === 'scroll-container') {
-                                                        const loadingElement = document.getElementById('loading');
-                                                        if (loadingElement) {
-                                                                loadingElement.style.opacity = '0';
-                                                                setTimeout(() => loadingElement.style.display = 'none', 500);
-                                                        }
-                                                }
-                                        } else if (containerId === 'scroll-container') {
-                                                const loadingElement = document.getElementById('loading');
-                                                if (loadingElement) loadingElement.innerText = `Loading frames... ${Math.round((loadedImages / frameCount) * 100)}%`;
-                                        }
-                                };
-                                img.src = framePathGenerator(i);
-                                images.push(img);
+                let logoHasFaded = false;
+                
+                // Fade out hero logo after 3 seconds
+                setTimeout(() => {
+                        logoHasFaded = true;
+                        const heroLogo = document.getElementById('hero-logo');
+                        if (heroLogo) {
+                                heroLogo.style.transition = 'opacity 1.5s ease-out';
+                                heroLogo.style.opacity = '0';
                         }
+                }, 3000);
 
-                        if (images.length > 0) {
-                                images[0].addEventListener('load', () => {
-                                        canvas.width = images[0].naturalWidth;
-                                        canvas.height = images[0].naturalHeight;
-                                });
-                        }
-
-                        function renderFrame(index) {
-                                if (images[index] && images[index].complete) {
-                                        context.clearRect(0, 0, canvas.width, canvas.height);
-                                        context.drawImage(images[index], 0, 0);
-                                }
-                        }
-
-                        // Bind the scroll event to update frames
-                        window.addEventListener('scroll', () => {
-                                const containerRect = container.getBoundingClientRect();
+                // Fade out hero logo on scroll
+                window.addEventListener('scroll', () => {
+                        if (logoHasFaded) return;
+                        
+                        const heroSection = document.getElementById('hero-section');
+                        const heroLogo = document.getElementById('hero-logo');
+                        if (heroSection && heroLogo) {
+                                const sectionRect = heroSection.getBoundingClientRect();
                                 let scrollFraction = 0;
-
-                                if (containerRect.top <= 0) {
-                                        const maxScroll = containerRect.height - window.innerHeight;
-                                        scrollFraction = -containerRect.top / maxScroll;
+                                if (sectionRect.top <= 0) {
+                                        scrollFraction = -sectionRect.top / (sectionRect.height * 0.5); // Fade out over half the section
                                 }
-
-                                scrollFraction = Math.max(0, Math.min(1, scrollFraction));
-
-                                if (onScrollCallback) {
-                                        onScrollCallback(scrollFraction);
-                                }
-
-                                const frameIndex = Math.min(
-                                        frameCount - 1,
-                                        Math.ceil(scrollFraction * frameCount)
-                                );
-
-                                requestAnimationFrame(() => renderFrame(frameIndex));
-                        });
-                }
-
-                // Initialize Hero Animation
-                initScrollAnimation(
-                        'scroll-container',
-                        'animation-canvas',
-                        231,
-                        (index) => `frames/ezgif-frame-${(index + 1).toString().padStart(3, '0')}.jpg`,
-                        (fraction) => {
-                                const heroLogo = document.getElementById('hero-logo');
-                                if (heroLogo) {
-                                        let logoOpacity = 1 - (fraction / 0.3);
-                                        heroLogo.style.opacity = Math.max(0, Math.min(1, logoOpacity));
+                                let logoOpacity = 1 - scrollFraction;
+                                heroLogo.style.opacity = Math.max(0, Math.min(1, logoOpacity));
+                                
+                                if (scrollFraction >= 1) {
+                                        logoHasFaded = true;
                                 }
                         }
-                );
+                });
 
-                // Initialize Second Animation
-                initScrollAnimation(
-                        'scroll-container-2',
-                        'animation-canvas-2',
-                        151,
-                        (index) => `frames2/ezgif-frame-${(index + 1).toString().padStart(3, '0')}.jpg`
-                );
+
 
                 // Smooth scroll for nav links
                 document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
@@ -456,6 +469,32 @@
 
                 document.querySelectorAll('.scroll-reveal').forEach((el) => {
                         observer.observe(el);
+                });
+
+                // Auto-scrolling full-width sliders
+                document.querySelectorAll('.auto-slider').forEach(slider => {
+                        setInterval(() => {
+                                const slideWidth = slider.clientWidth;
+                                const currentScroll = slider.scrollLeft;
+                                const slideIndex = Math.round(currentScroll / slideWidth);
+
+                                if (slideIndex >= 5) {
+                                        // We are at the cloned slide (index 5). 
+                                        // Instantly jump back to the identical original slide (index 0).
+                                        slider.classList.remove('scroll-smooth');
+                                        slider.scrollLeft = 0;
+                                        
+                                        // Restore smooth scroll and proceed to the next slide (index 1) after a brief frame yield
+                                        requestAnimationFrame(() => {
+                                                requestAnimationFrame(() => {
+                                                        slider.classList.add('scroll-smooth');
+                                                        slider.scrollLeft = slideWidth;
+                                                });
+                                        });
+                                } else {
+                                        slider.scrollLeft += slideWidth;
+                                }
+                        }, 4000);
                 });
         </script>
 </body>
