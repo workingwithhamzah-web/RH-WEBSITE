@@ -230,7 +230,7 @@
 
         <!-- Hero Video Section -->
         <div id="hero-section" class="relative w-full h-[100vh] overflow-hidden bg-black flex items-center justify-center">
-                <video src="assets/RH_Teaser_01_v1.mp4" autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover opacity-80"></video>
+                <video id="hero-video" src="assets/RH_Teaser_01_v1.mp4" autoplay loop muted playsinline preload="auto" class="absolute inset-0 w-full h-full object-cover opacity-80"></video>
                 <div class="absolute inset-0 bg-black/20"></div>
                 <div id="hero-logo" class="relative z-10 w-44 md:w-64 lg:w-[350px] logo-shine-wrapper overflow-hidden" style="opacity: 1;">
                         <img src="assets/logo.png" alt="Rare Heritage" class="w-full h-auto block" />
@@ -314,35 +314,29 @@
         <section class="relative w-full overflow-hidden bg-black pt-16 md:pt-24 pb-8 border-t border-outline-variant/10 group">
                 <!-- Constant Text Overlay -->
                 <div class="pointer-events-none absolute bottom-12 md:bottom-16 left-1/2 -translate-x-1/2 w-full text-center z-20 transition-opacity duration-300 opacity-90 group-hover:opacity-100">
-                        <div class="font-serif text-white uppercase text-2xl md:text-4xl tracking-[0.3em] font-light" style="font-family: 'Times New Roman', Times, serif; text-shadow: 0px 4px 10px rgba(0,0,0,0.8);">HIGH JEWELLERY</div>
+                        <div class="font-display-lg font-bold text-white uppercase text-2xl md:text-4xl tracking-[0.3em]" style="text-shadow: 0px 4px 10px rgba(0,0,0,0.8);">HIGH JEWELLERY</div>
                 </div>
-                <!-- Gradient Overlay for readability -->
-                <div class="pointer-events-none absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-1000"></div>
 
-                <div class="auto-slider flex w-full overflow-x-auto snap-x snap-mandatory hide-scrollbar scroll-smooth">
+                <div class="auto-slider flex w-full overflow-x-auto snap-x snap-mandatory hide-scrollbar scroll-smooth items-center">
                         <!-- Slide 1 -->
-                        <div class="relative w-screen h-[85vh] flex-shrink-0 snap-center overflow-hidden bg-black">
-                                <img src="assets/jewellery_1.jpg" class="w-full h-full object-cover opacity-90 transition-transform duration-1000 group-hover:scale-105 group-hover:opacity-100" />
+                        <div class="relative w-screen h-[70vh] flex-shrink-0 snap-center overflow-hidden bg-black flex items-center">
+                                <img src="assets/jewellery_final_1.jpg" class="w-full h-full object-cover block" />
                         </div>
                         <!-- Slide 2 -->
-                        <div class="relative w-screen h-[85vh] flex-shrink-0 snap-center overflow-hidden bg-black">
-                                <img src="assets/jewellery_2.jpg" class="w-full h-full object-cover opacity-90 transition-transform duration-1000 group-hover:scale-105 group-hover:opacity-100" />
+                        <div class="relative w-screen h-[70vh] flex-shrink-0 snap-center overflow-hidden bg-black flex items-center">
+                                <img src="assets/jewellery_final_2.jpg" class="w-full h-full object-cover block" />
                         </div>
                         <!-- Slide 3 -->
-                        <div class="relative w-screen h-[85vh] flex-shrink-0 snap-center overflow-hidden bg-black">
-                                <img src="assets/jewellery_3.jpg" class="w-full h-full object-cover opacity-90 transition-transform duration-1000 group-hover:scale-105 group-hover:opacity-100" />
+                        <div class="relative w-screen h-[70vh] flex-shrink-0 snap-center overflow-hidden bg-black flex items-center">
+                                <img src="assets/jewellery_final_3.jpg" class="w-full h-full object-cover block" />
                         </div>
                         <!-- Slide 4 -->
-                        <div class="relative w-screen h-[85vh] flex-shrink-0 snap-center overflow-hidden bg-black">
-                                <img src="assets/jewellery_4.jpg" class="w-full h-full object-cover opacity-90 transition-transform duration-1000 group-hover:scale-105 group-hover:opacity-100" />
-                        </div>
-                        <!-- Slide 5 -->
-                        <div class="relative w-screen h-[85vh] flex-shrink-0 snap-center overflow-hidden bg-black">
-                                <img src="assets/jewellery_5.jpg" class="w-full h-full object-cover opacity-90 transition-transform duration-1000 group-hover:scale-105 group-hover:opacity-100" />
+                        <div class="relative w-screen h-[70vh] flex-shrink-0 snap-center overflow-hidden bg-black flex items-center">
+                                <img src="assets/jewellery_final_4.jpg" class="w-full h-full object-cover block" />
                         </div>
                         <!-- Slide 1 Clone (For Seamless Looping) -->
-                        <div class="relative w-screen h-[85vh] flex-shrink-0 snap-center overflow-hidden bg-black">
-                                <img src="assets/jewellery_1.jpg" class="w-full h-full object-cover opacity-90 transition-transform duration-1000 group-hover:scale-105 group-hover:opacity-100" />
+                        <div class="relative w-screen h-[70vh] flex-shrink-0 snap-center overflow-hidden bg-black flex items-center">
+                                <img src="assets/jewellery_final_1.jpg" class="w-full h-full object-cover block" />
                         </div>
                 </div>
         </section>
@@ -396,18 +390,23 @@
         </footer>
 
         <script>
+                // Force video play to ensure immediate start
+                const heroVideo = document.getElementById('hero-video');
+                if (heroVideo) {
+                        heroVideo.play().catch(() => {});
+                }
 
                 let logoHasFaded = false;
                 
-                // Fade out hero logo after 3 seconds
+                // Fade out hero logo after 2 seconds
                 setTimeout(() => {
                         logoHasFaded = true;
                         const heroLogo = document.getElementById('hero-logo');
                         if (heroLogo) {
-                                heroLogo.style.transition = 'opacity 1.5s ease-out';
+                                heroLogo.style.transition = 'opacity 1s ease-out';
                                 heroLogo.style.opacity = '0';
                         }
-                }, 3000);
+                }, 2000);
 
                 // Fade out hero logo on scroll
                 window.addEventListener('scroll', () => {
