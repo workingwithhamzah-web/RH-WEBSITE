@@ -9,7 +9,7 @@
         <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
         <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
                 rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;500;700&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700&display=swap" rel="stylesheet" />
         <script id="tailwind-config">
                 tailwind.config = {
                         darkMode: "class",
@@ -220,12 +220,23 @@
                                 <img src="assets/icon.png" alt="RH Icon" class="h-10 md:h-14 w-auto object-contain" />
                         </a>
                 </div>
-                <div class="flex items-center gap-6 md:gap-10">
-                        <a href="#brand-story" class="font-label-caps text-label-caps text-white hover:text-white transition-colors duration-300 tracking-widest text-xs md:text-sm">BRAND STORY</a>
-                        <a href="#reach-us" class="font-label-caps text-label-caps text-white hover:text-white transition-colors duration-300 tracking-widest text-xs md:text-sm">REACH US</a>
-                        <a href="https://www.instagram.com/rareheritage?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" class="text-white hover:text-white transition-colors duration-300 ml-2 md:ml-4 flex items-center justify-center hover:scale-110">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                <!-- Desktop Nav Links -->
+                <div class="hidden lg:flex items-center gap-4 xl:gap-6">
+                        <a href="#brand-story" class="font-['Manrope'] font-extralight text-white hover:text-white/70 transition-colors duration-300 tracking-[0.2em] text-[11px] xl:text-xs uppercase whitespace-nowrap">BRAND STORY</a>
+                        <a href="#craftsmanship" class="font-['Manrope'] font-extralight text-white hover:text-white/70 transition-colors duration-300 tracking-[0.2em] text-[11px] xl:text-xs uppercase whitespace-nowrap">CRAFTSMANSHIP</a>
+                        <a href="#qala" class="font-['Manrope'] font-extralight text-white hover:text-white/70 transition-colors duration-300 tracking-[0.2em] text-[11px] xl:text-xs uppercase whitespace-nowrap">QALA</a>
+                        <a href="#beyond-borders" class="font-['Manrope'] font-extralight text-white hover:text-white/70 transition-colors duration-300 tracking-[0.2em] text-[11px] xl:text-xs uppercase whitespace-nowrap">BEYOND BORDERS</a>
+                        <a href="#rare-love" class="font-['Manrope'] font-extralight text-white hover:text-white/70 transition-colors duration-300 tracking-[0.2em] text-[11px] xl:text-xs uppercase whitespace-nowrap">RARE X LOVE</a>
+                        <a href="#rare-experience" class="font-['Manrope'] font-extralight text-white hover:text-white/70 transition-colors duration-300 tracking-[0.2em] text-[11px] xl:text-xs uppercase whitespace-nowrap">RARE EXPERIENCE</a>
+                        <a href="#reach-us" class="font-['Manrope'] font-extralight text-white hover:text-white/70 transition-colors duration-300 tracking-[0.2em] text-[11px] xl:text-xs uppercase whitespace-nowrap">REACH US</a>
+                        <a href="https://www.instagram.com/rareheritage?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" class="text-white hover:text-white/70 transition-colors duration-300 ml-2 flex items-center justify-center hover:scale-110">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
                         </a>
+                </div>
+                <!-- Mobile Nav Links (Collapsed) -->
+                <div class="flex lg:hidden items-center gap-4">
+                        <a href="#brand-story" class="font-['Manrope'] font-extralight text-white tracking-[0.2em] text-[10px] uppercase">STORY</a>
+                        <a href="#reach-us" class="font-['Manrope'] font-extralight text-white tracking-[0.2em] text-[10px] uppercase">CONTACT</a>
                 </div>
         </nav>
 
@@ -256,7 +267,7 @@
         </section>
 
         <!-- Craftsmanship Banner -->
-        <section class="relative w-full overflow-hidden bg-black group">
+        <section id="craftsmanship" class="relative w-full overflow-hidden bg-black group">
                 <!-- Center Text Overlay -->
                 <div class="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-center z-20 transition-opacity duration-300 opacity-90 group-hover:opacity-100 px-4">
                         <h2 class="font-['Manrope'] font-light text-white text-3xl md:text-4xl tracking-[0.4em] mb-4 md:mb-6 uppercase" style="text-shadow: 0px 4px 10px rgba(0,0,0,0.8);">CRAFTSMANSHIP</h2>
@@ -288,7 +299,7 @@
         </section>
 
         <!-- Moving Slider Section -->
-        <section class="relative w-full overflow-hidden bg-black group mb-12 md:mb-20">
+        <section id="qala" class="relative w-full overflow-hidden bg-black group mb-12 md:mb-20">
                 <!-- Constant Logo Overlay -->
                 <div class="pointer-events-none absolute bottom-10 left-1/2 -translate-x-1/2 w-48 md:w-72 z-20 transition-opacity duration-300 opacity-80 group-hover:opacity-100">
                         <img src="assets/qala_logo.png" class="w-full h-auto drop-shadow-md" />
@@ -323,7 +334,7 @@
         </section>
         
         <!-- Beyond Borders Slider Section -->
-        <section class="relative w-full overflow-hidden bg-black group mb-12 md:mb-20">
+        <section id="beyond-borders" class="relative w-full overflow-hidden bg-black group mb-12 md:mb-20">
                 <!-- Constant Logo Overlay -->
                 <div class="pointer-events-none absolute bottom-6 left-1/2 -translate-x-1/2 w-80 md:w-[36rem] max-w-[90vw] z-20 transition-opacity duration-300 opacity-80 group-hover:opacity-100">
                         <img src="assets/beyond_borders_logo.png" class="w-full h-auto drop-shadow-md mix-blend-screen" />
@@ -354,7 +365,7 @@
         </section>
 
         <!-- New Collection Slider Section -->
-        <section class="relative z-10 w-full overflow-hidden bg-black group">
+        <section id="rare-love" class="relative z-10 w-full overflow-hidden bg-black group">
                 <!-- Constant Logo Overlay -->
                 <div class="pointer-events-none absolute bottom-6 left-1/2 -translate-x-1/2 w-64 md:w-[28rem] max-w-[90vw] z-20 transition-opacity duration-300 opacity-80 group-hover:opacity-100">
                         <img src="assets/rare_x_love_logo.png" class="w-full h-auto drop-shadow-md mix-blend-screen" />
@@ -398,7 +409,7 @@
         </section>
 
         <!-- Rare Experience Banner -->
-        <section class="relative w-full h-[70vh] overflow-hidden bg-black group">
+        <section id="rare-experience" class="relative w-full h-[70vh] overflow-hidden bg-black group">
                 <!-- Center Text Overlay -->
                 <div class="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-center z-20 transition-opacity duration-300 opacity-90 group-hover:opacity-100 px-4">
                         <h2 class="font-['Manrope'] font-light text-white text-3xl md:text-4xl tracking-[0.4em] mb-4 md:mb-6 uppercase" style="text-shadow: 0px 4px 10px rgba(0,0,0,0.8);">RARE EXPERIENCE</h2>
