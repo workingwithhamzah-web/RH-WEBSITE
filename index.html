@@ -4,6 +4,9 @@
         <meta charset="utf-8" />
         <meta content="width=device-width, initial-scale=1.0" name="viewport" />
         <title>Rare Heritage</title>
+        <link rel="icon" type="image/png" href="assets/icon.png" />
+        <link rel="apple-touch-icon" href="assets/icon.png" />
+        <link rel="shortcut icon" href="assets/icon.png" />
         <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
         <link href="https://fonts.googleapis.com" rel="preconnect" />
         <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
@@ -233,12 +236,33 @@
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
                         </a>
                 </div>
-                <!-- Mobile Nav Links (Collapsed) -->
-                <div class="flex lg:hidden items-center gap-4">
-                        <a href="#brand-story" class="font-['Manrope'] font-extralight text-white tracking-[0.2em] text-[10px] uppercase">STORY</a>
-                        <a href="#reach-us" class="font-['Manrope'] font-extralight text-white tracking-[0.2em] text-[10px] uppercase">CONTACT</a>
+                <!-- Mobile Nav Toggle -->
+                <div class="flex lg:hidden items-center">
+                        <button id="mobile-menu-btn" class="text-white hover:text-white/70 p-2 -mr-2 transition-colors z-[110] relative">
+                                <svg id="menu-icon-burger" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="transition-all duration-300"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                                <svg id="menu-icon-close" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="absolute top-2 left-2 opacity-0 transition-all duration-300 scale-50"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                        </button>
                 </div>
         </nav>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="fixed inset-0 bg-black/95 z-[90] flex flex-col items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300 backdrop-blur-xl">
+                <div class="flex flex-col items-center gap-8 w-full px-6">
+                        <a href="#brand-story" class="mobile-nav-link font-['Manrope'] font-extralight text-white hover:text-white/70 transition-colors duration-300 tracking-[0.2em] text-sm uppercase">BRAND STORY</a>
+                        <a href="#craftsmanship" class="mobile-nav-link font-['Manrope'] font-extralight text-white hover:text-white/70 transition-colors duration-300 tracking-[0.2em] text-sm uppercase">CRAFTSMANSHIP</a>
+                        <a href="#qala" class="mobile-nav-link font-['Manrope'] font-extralight text-white hover:text-white/70 transition-colors duration-300 tracking-[0.2em] text-sm uppercase">QALA</a>
+                        <a href="#beyond-borders" class="mobile-nav-link font-['Manrope'] font-extralight text-white hover:text-white/70 transition-colors duration-300 tracking-[0.2em] text-sm uppercase">BEYOND BORDERS</a>
+                        <a href="#rare-love" class="mobile-nav-link font-['Manrope'] font-extralight text-white hover:text-white/70 transition-colors duration-300 tracking-[0.2em] text-sm uppercase">RARE X LOVE</a>
+                        <a href="#rare-experience" class="mobile-nav-link font-['Manrope'] font-extralight text-white hover:text-white/70 transition-colors duration-300 tracking-[0.2em] text-sm uppercase">RARE EXPERIENCE</a>
+                        <a href="#reach-us" class="mobile-nav-link font-['Manrope'] font-extralight text-white hover:text-white/70 transition-colors duration-300 tracking-[0.2em] text-sm uppercase">REACH US</a>
+                        
+                        <div class="w-12 h-[1px] bg-white/20 my-2"></div>
+                        
+                        <a href="https://www.instagram.com/rareheritage?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" class="text-white hover:text-white/70 transition-colors duration-300 flex items-center justify-center hover:scale-110">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                        </a>
+                </div>
+        </div>
 
         <!-- Hero Video Section -->
         <div id="hero-section" class="relative w-full h-[100vh] overflow-hidden bg-black flex items-center justify-center">
@@ -614,6 +638,42 @@
                                         });
                                 }
                         }, 4000);
+                });
+
+                // Mobile Menu Toggle
+                const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+                const mobileMenu = document.getElementById('mobile-menu');
+                const iconBurger = document.getElementById('menu-icon-burger');
+                const iconClose = document.getElementById('menu-icon-close');
+                const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+                let isMobileMenuOpen = false;
+
+                function toggleMobileMenu() {
+                        isMobileMenuOpen = !isMobileMenuOpen;
+                        
+                        if (isMobileMenuOpen) {
+                                mobileMenu.classList.remove('opacity-0', 'pointer-events-none');
+                                iconBurger.classList.add('opacity-0', 'scale-50', 'rotate-90');
+                                iconClose.classList.remove('opacity-0', 'scale-50');
+                                iconClose.classList.add('rotate-90');
+                                document.body.style.overflow = 'hidden'; // Prevent background scrolling
+                        } else {
+                                mobileMenu.classList.add('opacity-0', 'pointer-events-none');
+                                iconBurger.classList.remove('opacity-0', 'scale-50', 'rotate-90');
+                                iconClose.classList.add('opacity-0', 'scale-50');
+                                iconClose.classList.remove('rotate-90');
+                                document.body.style.overflow = ''; // Restore scrolling
+                        }
+                }
+
+                mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+
+                // Close menu when a link is clicked
+                mobileNavLinks.forEach(link => {
+                        link.addEventListener('click', () => {
+                                if (isMobileMenuOpen) toggleMobileMenu();
+                        });
                 });
         </script>
 </body>
